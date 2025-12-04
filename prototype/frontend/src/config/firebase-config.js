@@ -1,3 +1,8 @@
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+import { getFunctions } from 'firebase/functions';
+
 // GANTI DENGAN CONFIG FIREBASE PROJECT KAMU
 const firebaseConfig = {
     apiKey: "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
@@ -8,4 +13,7 @@ const firebaseConfig = {
     appId: "1:123456789:web:abcdef123456"
 };
 
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const functions = getFunctions(app);
